@@ -1,9 +1,10 @@
 // Create a function to return a reverse array.
 #include<stdio.h>
 
+// simply swaping the ith element with n-1-i element
 void reverseArray(int *array, int size){
     int length = size / 2;
-    for(int i = 0; i < length; i++){
+    for(int i = 0; i < length; i++){ // swaping the value of i element with n-1-i 
         int buffer = array[size - 1 - i];
         array[size - 1 -i] = array[i];
         array[i] = buffer;
