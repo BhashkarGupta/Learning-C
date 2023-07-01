@@ -97,6 +97,7 @@ void deleteNode(struct Node** head, int position){
             currentNode = currentNode->link;
         }
         previousNode->link = currentNode->link;
+        free(currentNode);
     }
 }
 
@@ -111,6 +112,18 @@ void printLinkedlist(struct Node* head){
     }
     printf("\n");
 }
+
+// Delete Linkedlist
+void deleteLinkedList(struct Node** head) {
+    struct Node* tempNode = *head;
+    while (tempNode != NULL) {
+        struct Node* nextNode = tempNode->link;
+        free(tempNode);
+        tempNode = nextNode;
+    }
+    *head = NULL;  
+}
+
 
 int main(){
     struct Node* head = NULL; // pointer(Head) for struct Node data type
@@ -134,7 +147,8 @@ int main(){
         printf("1. Update\n");
         printf("2. Delete\n");
         printf("3. Insert\n");
-        printf("Please select(1/ 2/ 3): ");
+        printf("4. Delete Linkedlist\n");
+        printf("Please select(1/ 2/ 3/ 4): ");
         scanf("%d", &option);
 
         switch (option){
@@ -165,6 +179,11 @@ int main(){
             printLinkedlist(head);
             printf("Do you want to continue Operation(y/n): ");
             scanf(" %c", &cont);
+            break;
+        case 4:
+            deleteLinkedList(&head);
+            printf("Linked list deleted and memory freed.");
+            printf("Exiting...X");
             break;
         default:
             printf("Invalid Input\n");
