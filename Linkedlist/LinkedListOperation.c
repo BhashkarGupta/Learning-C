@@ -124,6 +124,14 @@ void deleteLinkedList(struct Node** head) {
     *head = NULL;  
 }
 
+// Print Reverse
+void printreverse(struct Node* head){
+    if(head == NULL){
+        return;
+    }
+    head = head->link;
+    printf("%d ", head->data);
+}
 
 int main(){
     struct Node* head = NULL; // pointer(Head) for struct Node data type
