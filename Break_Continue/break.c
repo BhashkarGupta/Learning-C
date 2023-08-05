@@ -11,7 +11,7 @@ int main()
         if (user_input % 2 != 0)
         {
             printf("The Number is Odd number.\n");
-            break; //this will break the loop and exit it.
+            break; //this will break the look and exit it.
         }  
         printf("The Number is Even Number.\n");
     }
