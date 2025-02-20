@@ -8,9 +8,9 @@ int main(){
     scanf("%f", &selleing_price);
     difference = selleing_price - cost_price;
     if (difference > 0 ){
-        printf("The profit of selling 25 bananas is: %.2f", difference * 25);
+        printf("The profit of selling 25 bananas is: %.2f\n", difference / 12 * 25);
     } else if (difference < 0){
-        printf("The Loss of selling 25 banannas is %.2f", difference * 25);
+        printf("The Loss of selling 25 banannas is %.2f\n", difference / 12 * 25);
     } else {
         printf("There is no profit or loss in this transanction");
     }
