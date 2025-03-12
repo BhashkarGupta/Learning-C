@@ -4,6 +4,14 @@ int main(){
     int userInput, temp;
     printf("Please enter a number: ");
     scanf("%d", &userInput);
-
+    if (userInput & 1 == 1)
+    {
+        printf("Odd Number\n");
+    }
+    else
+    {
+        printf("Even Number\n");
+    }
+    
     return 0;
 }
