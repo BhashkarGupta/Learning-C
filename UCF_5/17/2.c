@@ -1,0 +1,18 @@
+// Write a program to for the pattern in the question 
+#include<stdio.h>
+int main(){
+    for(int i=1; i<=5; i++){
+        int count = 5 - i;
+        for (int k = 0; k < count; k++)
+        {
+            printf("  ");
+        }
+        
+        for (int j = 0; j < i; j++)
+        {
+            printf("* ");
+        }
+        printf("\n");
+    }
+    return 0;
+}
