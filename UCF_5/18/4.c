@@ -1,8 +1,28 @@
-// Write a program to 
+// Write a program to for the pattern in the question 
+// grid height should be upto 9
 #include<stdio.h>
 int main(){
-    int userInput;
-    printf("Please enter a number to find the Nth term of the Fibonacci series: ");
-    scanf("%d", &userInput);
+    int gridHeight = 9, gridLenght = (gridHeight * 2) - 1 ;
+    for (int i = 1; i <= gridHeight; i++)
+    {
+        int temp = 0, decValue = 0;
+        for (int j = 1; j <= gridLenght; j++)
+        {
+            if ((gridHeight+1-i)<=j && (gridHeight-1+i)>=j)
+            {
+                if (temp<i && decValue==0)
+                {
+                    temp++;
+                }else{
+                    temp--;
+                    decValue = 1;
+                }
+                printf("%d ", temp);
+            }else{
+                printf("  ");
+            } 
+        }
+        printf("\n");
+    }
     return 0;
 }

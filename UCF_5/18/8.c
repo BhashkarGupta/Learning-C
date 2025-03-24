@@ -8,11 +8,11 @@ int main(){
     {
         for (int j = 1; j <= gridLenght; j++)
         {
-            if (j >= less && j<= more)
+            if (j > less && j< more)
             {
-                printf("* ");
-            }else{
                 printf("  ");
+            }else{
+                printf("* ");
             }
         }            
         more++;

@@ -1,8 +1,23 @@
-// Write a program to 
+// Write a program to for the pattern in the question 
 #include<stdio.h>
 int main(){
-    int userInput;
-    printf("Please enter a number to find the Nth term of the Fibonacci series: ");
-    scanf("%d", &userInput);
+    int gridHeight = 4, gridLenght = (gridHeight * 2) - 1 ;
+    int less = 1 , more = gridLenght;
+    for (int i = 1; i <= gridHeight; i++)
+    {
+        for (int j = 1; j <= gridLenght; j++)
+        {
+            if (j >= less && j<= more)
+            {
+                printf("* ");
+            }else{
+                printf("  ");
+            }
+        }            
+        more--;
+        less++;
+        printf("\n");
+    }
+    
     return 0;
 }
