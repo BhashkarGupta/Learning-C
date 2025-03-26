@@ -1,4 +1,4 @@
-// Write a program to 
+// Write a function to calculate simple interest.
 #include<stdio.h>
 int main(){
     int userInput;
