@@ -1,0 +1,1 @@
+    // printf("%d\n", DigitCounter(12345));
