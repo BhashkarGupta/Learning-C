@@ -1,16 +1,26 @@
 // Write a program to for the pattern in the question 
 #include<stdio.h>
 int main(){
-    for(int i=5; i>0; i--){
-        int count = 5 - i;
-        for (int k = 0; k < count; k++)
+    int gridHeight = 5, gridLenght = (gridHeight * 2) - 1 ;
+    int less , more;
+    less = more = 1 + (gridLenght / 2);
+    for (int i = 1; i <= gridHeight; i++)
+    {
+        for (int j = 1; j <= gridLenght; j++)
         {
-            printf("  ");
-        }
-        for (int j = 0; j < i; j++)
-        {
-            printf("%c ", j+65+count);
-        }
+            if (j > less && j< more)
+            {
+                printf("  ");
+            }else{
+                if(j <= ((gridLenght/2) + 1)){
+                    printf("%d ", j);
+                }else{
+                    printf("%d ", gridLenght + 1 - j);
+                }
+            }
+        }            
+        more++;
+        less--;
         printf("\n");
     }
     return 0;
