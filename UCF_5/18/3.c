@@ -1,7 +1,7 @@
 // Write a program to for the pattern in the question 
 #include<stdio.h>
 int main(){
-    int gridHeight = 4, gridLenght = (gridHeight * 2) - 1 ;
+    int gridHeight = 9, gridLenght = (gridHeight * 2) - 1 ;
     for (int i = 1; i <= gridHeight; i++)
     {
         for (int j = 1; j <= gridLenght; j++)

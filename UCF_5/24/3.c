@@ -22,7 +22,7 @@ void PascalTriangle(int height){
         int printCounter = 1;
         for(int j = 1; j <= lenght; j++){
             if(j >= printHead && j < (printHead+i)){
-                printf("%d   ", CellValue(printCounter, i));
+                printf(CellValue(printCounter, i)<=9 ? "%d   " : "%d  ", CellValue(printCounter, i));
                 printCounter++;
             }else{
                 printf("  ");
