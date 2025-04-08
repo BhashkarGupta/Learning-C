@@ -18,20 +18,21 @@ void PrintArray(int list[], int size){
 }
 
 void RotateArray(int array[], int size, int noOfShift, int direction){
-    int temp1, temp2;
-    temp1 = array[size - noOfShift + 1];
+    int tempArray[size];
     for (int i = 0; i < size; i++)
     {
-        if (direction)
-        {
-
-        }
-        
+        tempArray[(direction ? i+noOfShift : size - noOfShift + i)%size] = array[i];
     }
-    
+    for(int i=0; i<size; i++){
+        array[i] = tempArray[i];
+    }
 }
 
 int main(){
+    int list[10];
+    TakeUserInput(list, 10);
+    RotateArray(list, 10, 3, 0);
+    PrintArray(list, 10);
     printf("\n");
     return 0;
 }
