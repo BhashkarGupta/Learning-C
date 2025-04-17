@@ -1,4 +1,4 @@
-// 
+// Write a function to find a word in a given string.
 #include<stdio.h>
 
 int main(){
