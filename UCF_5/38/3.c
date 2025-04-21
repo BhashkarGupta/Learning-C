@@ -9,16 +9,16 @@ int WordCount(char str[]){
     count--;
     for(int i=0; i<=count; i++){
         if(str[i] == ' '){
-            if(i != 0 || i != count){
+            if(i != 0 && i != count){
                 wordCount++;
             }
         }
     }
-    return wordCount++;
+    return wordCount + 1;
 }
 
 int main(){
-    char str[] = "This is sample string";
+    char str[] = " This is sample string ";
     printf("Word count : %d\n", WordCount(str));
     return 0;
 }
