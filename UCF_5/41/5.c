@@ -38,7 +38,7 @@ int main() {
         "judy@yahoo.com"
     };
 
-    char target[] = "gmail.com";
+    char target[] = "@gmail.com";
     int count = ContainsString(emails, 10, target);
     printf("Number of gmail accounts: %d\n", count);
 
