@@ -2,7 +2,8 @@
 #include<stdio.h>
 
 void SwapString(char *str1, char *str2){
-    char temp, indexCounter = 0;
+    char temp;
+    int indexCounter = 0;
     while(*(str1 + indexCounter) != 0 || *(str2 + indexCounter) != 0){
         temp = *(str1 + indexCounter);
         *(str1 + indexCounter) = *(str2 + indexCounter);

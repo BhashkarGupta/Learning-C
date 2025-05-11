@@ -11,7 +11,7 @@ int CompareString(char str1[], char str2[]){
         }
         count++;
     }
-    if (str1[count+1] != str2[count+1])
+    if (str1[count] != str2[count])
     {
         return 0;
     }
