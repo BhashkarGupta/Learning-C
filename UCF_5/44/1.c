@@ -1,6 +1,5 @@
 #include<stdio.h>
 // Define a structure Employee with member variables id, name, salary 
-
 struct employee
 {
     int id;
@@ -31,7 +30,6 @@ void PrintEmployeeData(struct employee employeeData[], int arraySize) {
                employeeData[i].salary);
     }
 }
-
 
 // Write a function to find the highest salary employee from a given array of 10 employees. [ Refer structure from question 1]
 int HighestSalariedEmployee(struct employee employeeDataArray[], int arraySize){
@@ -82,7 +80,51 @@ void SortBySalary(struct employee employeeDataArray[], int arraySize){
 }
 
 // Write a function to sort employees according to their names [refer structure from question 1]
+char ToSmallCase(char character){
+    if (character >= 65 && character <= 90)
+    {
+        return character + 32;
+    }
+    return character;
+}
 
+int CompareString(char str1[], char str2[]){
+    int indexCounter = 0;
+    while (str1[indexCounter] != 0 && str2[indexCounter] != 0)
+    {
+        if (ToSmallCase(str1[indexCounter]) > ToSmallCase(str2[indexCounter]))
+        {
+            return 0;
+        } else if ((ToSmallCase(str1[indexCounter]) < ToSmallCase(str2[indexCounter])))
+        {
+            return 1;
+        }
+        indexCounter++;
+    }
+    if (str1[indexCounter] > str2[indexCounter]){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+void SortByName(struct employee employeeDataArray[], int arraySize){
+    for (int i = 0; i < arraySize-1; i++)
+    {
+        int smallestStringIndex = i;
+        for (int j = i + 1; j < arraySize; j++)
+        {
+            if (!CompareString(employeeDataArray[smallestStringIndex].name, employeeDataArray[j].name))
+            {
+                smallestStringIndex = j;
+            }
+        }
+        if (smallestStringIndex != i)
+        {
+            SwapEmployee(&employeeDataArray[i], &employeeDataArray[smallestStringIndex]);
+        }
+    }
+}
 
 int main() {
     struct employee employees[10] = {
@@ -112,6 +154,15 @@ int main() {
     SortBySalary(employees, size);
 
     printf("\nEmployee Data After Sorting by Salary (Descending):\n");
+    PrintEmployeeData(employees, size);
+
+    // Sorting by name
+    printf("\nSorting Employee by Name:\n");
+
+    // Sort employees by Name
+    SortByName(employees, size);
+
+    printf("\nEmployee Data After Sorting by Name:\n");
     PrintEmployeeData(employees, size);
 
     return 0;
