@@ -7,15 +7,29 @@ struct employee
     float salary;
 };
 
+void ClearOutNewLineChar(char str[]){
+    int indexCounter = 0;
+    while (str[indexCounter] != 0)
+    {
+        if (str[indexCounter] == '\n')
+        {
+            str[indexCounter] = 0;
+            break;
+        }
+        indexCounter++;
+    }
+}
+
 // Write a function to take input employee data from the user. [Refer structure from question 1] 
 struct employee takeUserInput(){
     struct employee employeeData;
     printf("Please enter the emeployee id: ");
     scanf("%d", &employeeData.id);
     getchar();
-    printf("Please enter the name of the employee");
+    printf("Please enter the name of the employee: ");
     fgets(employeeData.name, 50, stdin);
-    printf("Please enter the employee salary");
+    ClearOutNewLineChar(employeeData.name);
+    printf("Please enter the employee salary: ");
     scanf("%f", &employeeData.salary);
     return employeeData;
 }
@@ -127,7 +141,7 @@ void SortByName(struct employee employeeDataArray[], int arraySize){
 }
 
 int main() {
-    struct employee employees[10] = {
+    struct employee employees[11] = {
         {1001, "Amit Sharma", 58000.00},
         {1002, "Priya Verma", 62000.50},
         {1003, "Rahul Mehta", 47500.75},
@@ -137,10 +151,11 @@ int main() {
         {1007, "Rohan Singh", 46000.80},
         {1008, "Sneha Joshi", 54000.00},
         {1009, "Vikram Rao", 68000.90},
-        {1010, "Anjali Nair", 63000.60}
+        {1010, "Anjali Nair", 63000.60},
+        takeUserInput()
     };
 
-    int size = 10;
+    int size = 11;
 
     printf("Original Employee Data:\n");
     PrintEmployeeData(employees, size);
